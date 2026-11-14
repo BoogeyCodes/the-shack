@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-shack-cream font-body text-shack-green-deep antialiased;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-display text-3xl font-extrabold tracking-tight text-shack-green sm:text-4xl;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-shack-gold-light to-shack-gold px-6 py-3 font-display font-bold text-shack-green-deep shadow-lg shadow-shack-gold/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-shack-gold/40 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-shack-gold px-6 py-3 font-display font-bold text-shack-gold transition-all duration-300 hover:bg-shack-gold hover:text-shack-green-deep;
+  }
+}
+
+/* custom thin scrollbar for category rail */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bg-grain {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
