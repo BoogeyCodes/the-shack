@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCart } from '../context/CartContext.jsx'
 import { brand, fmtPrice } from '../data/menu.js'
 
@@ -6,6 +6,16 @@ export default function Cart() {
   const { items, count, total, inc, dec, remove, clear } = useCart()
   const [open, setOpen] = useState(false)
   const [orderNote, setOrderNote] = useState('')
+
+  // Lock background page scroll while the cart drawer is open
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [open])
 
   const checkoutWhatsApp = () => {
     const lines = items.map((i) => {
