@@ -6,6 +6,7 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    color-scheme: light;
   }
   body {
     @apply bg-shack-cream font-body text-shack-green-deep antialiased;
